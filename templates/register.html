@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<main class="container p-5 justify-content-md-center" style="width: 30%">
+    <form action="/register" method="post">
+        <action method="post">
+        <div class="input-group mb-3">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        {% if alertUsername %}
+        <div class="alert alert-danger" role="alert">
+            Please insert Username <a href="/register" style="text-decoration: none;"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+              </svg></a>
+        </div>
+        {% endif %}
+        {% if alertUsernameTaken %}
+        <div class="alert alert-danger" style="text-align: center;" role="alert">
+            Username already taken <a href="/register" style="text-decoration: none;"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+              </svg></a>
+        </div>
+        {% endif %}
+
+        <div class="input-group mb-3">
+            <input class="form-control" name="password" placeholder="Password" type="password">    
+        </div>
+        {% if alertPassword %}
+        <div class="alert alert-danger" style="text-align: center;" role="alert">
+            Please insert password <a href="/register" style="text-decoration: none;"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+              </svg></a>
+        </div>
+        {% endif %}
+
+        <div class="input-group mb-3">
+            <input class="form-control" name="confirmation" placeholder="Repeat Password" type="password">
+        </div>
+        {% if alertRepPassword %}
+        <div class="alert alert-danger" style="text-align: center;" role="alert">
+            Please repeat password <a href="/register" style="text-decoration: none;"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+              </svg></a>
+        </div>
+        {% endif %}
+        {% if alertCompPassword %}
+        <div class="alert alert-danger" style="text-align: center;" role="alert">
+            Passwords are not the same <a href="/register" style="text-decoration: none;"> <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+              </svg></a>
+        </div>
+        {% endif %}
+        
+        <div class="d-grid gap-2 d-md-flex mb-3 justify-content-md-center">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+        {% if success %}
+    </div>
+        <div class="alert alert-success" style="text-align: center;" role="alert">
+        You are registered! <a href="\">Log in </a>
+   
+        </div>
+            {% endif %}
+    </action>
+    </form>
+</main>  
+{% endblock %}

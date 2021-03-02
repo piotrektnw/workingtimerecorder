@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-16">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="static/styles/styles.css/" rel="stylesheet" type= "text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+      
+      
+        <script>
+      
+            function toggle(id) {
+             
+          var x = document.getElementById(id);
+                
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+    
+        }
+        </script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="\index"><b>Working Time Recorder</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+               
+                {% if ((session.user_id) and (userIsAdmin is sameas true)) %}
+                <div name=admindiv>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">                      
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\changepassword">Change Password</a>
+                            </li>                       
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\removeusers">Remove</a>
+                            </li>                                       
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\">Logout</a>
+                            </li>                                   
+                        </ul>
+                    </div>
+                </div>
+
+                {% elif ((session.user_id) and (userIsAdmin is not sameas true)) %}
+
+                <div name="userdiv">   
+                    <div  class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">                      
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\changepassword">Change Password</a>
+                            </li>                                                              
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\">Logout</a>
+                            </li>                                                    
+                        </ul>
+                    </div>     
+                </div>
+
+                {% else %}
+
+                <div>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\readme"><b>Readme</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="\register">Register</a>
+                            </li>
+                        </ul>
+                    </div>        
+                {% endif %}
+     
+        </nav>
+
+        {% if ((session.user_id) and (userIsAdmin is sameas true)) %}
+        
+     
+        
+        <div name="mainadmin" class="container-sm">
+            {% block mainadmin %}{% endblock %}
+        </div>
+
+        {% elif ((session.user_id) and not (userIsAdmin is sameas true)) %}
+
+        <div name="mainuser" class="container-sm">
+            {% block mainuser %}{% endblock %}
+        </div>
+
+        {% endif %}
+
+        <main class="container-sm">
+            {% block main %}{% endblock %}
+        </main>
+
+  
+     
+    </body>
+
+</html>

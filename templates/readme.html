@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+
+<link href="static/styles/styles.css/" rel="stylesheet" type= "text/css">
+{% block main %}
+
+<h3 class="readmeheader"> Check below topics to find out more about this web-app and it's Author! </h1>
+    <div class="buttonwrapper"></div>
+        <button class="paragraph" onclick="toggle('myDIV')">Web-app purpose <svg xmlns="http://www.w3.org/2000/svg" class="svgarrow" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+        </svg></button>
+    </div>
+    <div class="hide" id="myDIV">
+        <h6 class="top">Working Time Recorder - a simple app to track employees working-time. </h6>
+        
+        <ol>
+            <li>Key functionalities:</li>
+                <ul>
+                    <li>track employees working-time</li>
+                    <li>register user</li>
+                    <li>change password</li>
+                    <li>show content depending on user status</li>
+                </ul>
+            <li> Working Time Recorder has been created using:</li>
+                <ul>
+                    <li><a href="https://flask.palletsprojects.com/en/1.1.x/"> <b>Flask</b> </a> - a <b>Python</b> framework </li>
+                    <li> Databases with <b>SQLite 3</b> - storing user information as well as time data</li>
+                    <li> <b>HTML</b>, <b>CSS</b>, <b>Bootsrap (v. 5.0)</b> and <b>JavaScript</b> - visualization of content</li>
+                </ul>
+        </ol>
+    </div>
+
+    <div class="buttonwrapper nav-item">
+        <button class="paragraph" onclick="toggle('myDIV1')">Admin info <svg xmlns="http://www.w3.org/2000/svg" class="svgarrow" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+        </svg></button>
+    </div>
+    <div class="hide" id="myDIV1">
+        <h6 class="top">Working Time Recorder is divided into two parts - admin and user. </h6>
+
+        <ol>
+            <li>Admin panel contains following functions:</li>
+                <ul>
+                    <li>display records of all employees</li>
+                    <li>filter table and display needed information</li>
+                    <li>remove user</li>
+                    <li>clear database (working time database)</li>
+                </ul>
+        <li>If you are interested in testing admin panel use following login data:</li>
+            <ul>
+                <li>Login: <b>admin</b></li>
+                <li>Password: <b>admin</b></li>
+            </ul>
+        </ol>
+    </div>
+
+    <div class="buttonwrapper">
+        <button class="paragraph" onclick="toggle('myDIV2')">User info <svg xmlns="http://www.w3.org/2000/svg" class="svgarrow" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+        </svg></button>
+    </div>
+    <div class="hide" id="myDIV2">
+        <h6 class="top">Working Time Recorder is divided into two parts - admin and user. </h6>
+            <ol>
+                <li>User panel contains following functions:</li>
+                <ul>
+                    <li>record working time using 'start' and 'stop' buttons</li>
+                    <li>take a break function (extends working time)</li>
+                    <li>display user records history</li>
+                </ul>
+            </ol>
+        <p>Feel free to register using <a href="/register" style="text-decoration: none;">Register</a> button and test 'User panel' functionalities.</p>
+    </div>
+
+    <div class="buttonwrapper">
+        <button class="paragraph" onclick="toggle('myDIV3')"> About Author <svg xmlns="http://www.w3.org/2000/svg" class="svgarrow" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+        </svg></button>
+    </div>
+    <div class="hide" id="myDIV3">
+        <h6 class="top"> Author information: </h6>
+
+        <p> My name is Piotr Panek and I put all of my effort in order to learn and gain experience in widely understood
+            programming area.
+            Please contact me at:
+            <ul>
+                <li>Phone: 0048 664 063 929</li>
+                <li>Email: piotrpanek111@gmail.com</li>
+            </ul> 
+            Until today I have gained knowledge in following languages and areas:</p>
+            <table>
+                <tr style="text-align: center">
+                  <th>Language</th>
+                  <th>Knowledge and experience</th>
+                  <th>Source</th>
+                </tr>
+
+                <tr>
+                  <td>C programming language</td>
+                  <td>
+                    Basic to advanced knowledge of C language structure, data structures, algorithms, syntax and libraries
+                  </td>
+                  <td>
+                    <ul>
+                        <li><a href="https://cs50.harvard.edu/x/2021/">CS50x</a> - Introduction to Computer Science by <b>Harvard University</b></li>
+                        <li>C Primer Plus - coursebook by Steven Prata</li>
+                        <li>documentation</li>
+                    </ul>
+                </td>
+                </tr>
+
+                <tr>
+                  <td>Databases - design<br> and usage </td>
+                  <td>Basic to advanced knowldege of SQLite 3 commands, design rules (related databases) and security rules</td>
+                  <td>
+                    <ul>
+                        <li><a href="https://cs50.harvard.edu/x/2021/">CS50x</a> - Introduction to Computer Science by <b>Harvard University</b></li>
+                        <li>documentation</li>
+                    </ul>
+                </td>
+                </tr>
+                
+                <tr> 
+                    <td>HTML, CSS, JavaScript, Bootstrap </td>
+                    <td>
+                    <ul>
+                        <li>Basic knowledge of JavaScript (currently studying)</li>
+                        <li>Advanced knowledge of HTML and CSS</li>
+                    </ul>
+                    <td>
+                      <ul>
+                          <li><a href="https://cs50.harvard.edu/x/2021/">CS50x</a> - Introduction to Computer Science by <b>Harvard University</b></li>
+                          <li>documentation</li>
+                      </ul>
+                  </td>
+                  </tr>
+
+                <tr> 
+                    <td>Python, Flask </td>
+                    <td>
+                        <ul>
+                            <li>Basic to advanced knowledge of Python syntax, structure & libraries</li>
+                            <li>Basic to advanced knowledge of Flask build and usage rules </li>
+                        </ul>
+                    </td>
+
+                    <td>
+                      <ul>
+                          <li><a href="https://cs50.harvard.edu/x/2021/">CS50x</a> - Introduction to Computer Science by <b>Harvard University</b></li>
+                          <li>documentation</li>
+                      </ul>
+                  </td>
+                  </tr>
+
+                  <tr>
+                  
+                    <td>Django </td>
+                    <td>Basic knowledge (currently studying) </td>
+                    <td>
+                      <ul>
+                          <li><a href="https://cs50.harvard.edu/web/2020/">CS50WEB</a> - Programming with Python and JavaScript by <b>Harvard University</b></li>
+                      </ul>
+                  </td>
+                  </tr>   
+                     </table>  
+                     <h6> Thanks to <b>Harvard's University</b> way of teaching and their focus on top-level learning system I am able quickly solve problems, efficiently find needed answers 
+                       and use gained knowledge to provide effective solutions to given problems - both backend and frontend. I am especially interested in developing myself
+                        in backend technologies but frontend is also area of my strong interests. That is why I focus on JavaScript, CSS (Sass as well) HTML and Python 
+                        frameworks: Flask and <b>Django</b>. 
+                    </h6> 
+    </div>
+    
+
+    
+
+
+{% endblock %}
+
+

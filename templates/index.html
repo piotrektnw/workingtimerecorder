@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+
+
+{% block mainadmin %}
+<h5 class="text-center" style="margin: 5%"> Welcome {{currentUser}}. </h5>
+
+
+    <div class="form-group text-center" style="margin-bottom: 5%">
+        <form action="/index" method="post">
+            <button class="btn btn-primary" type="submit" name="display" value="displayClicked">Display table</button> 
+            <button class="btn btn-primary" type="submit" name="short" value="shortClicked">Display users below limit</button>      
+            <button class="btn btn-primary" type="submit" name="clear" value="clearClicked">Clear database</button>
+            <a class="btn btn-primary"  href="\removeusers">Remove</a>
+            <a class="btn btn-primary"  href="\changepassword">Change Password</a>
+        </form>
+     </div>
+{% if shortCheck %}
+    <div class="container-sm">        
+        <table class="table table-striped table-hover top">
+            <tr>    
+                <th> Start: </th>
+                <th> Stop:  </th>
+                <th> Duration: </th>
+                <th> Username: </th>
+            </tr>
+            
+            {% for  started, stopped, duration, username, status in timing %}   
+                {% if status is divisibleby 2 %}        
+                <tr>
+                    <td>{{started}}</td>
+                    <td>{{stopped}}</td>            
+                    <td>{{duration}}</td>
+                    <td>{{username}}</td>
+                </tr> 
+                {% endif %} 
+            {% endfor %}    
+            
+        </table>    
+    </div>
+{% endif %}
+
+{% if displayCheck %}
+
+    <form action="/index" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Choose user</span>
+                <select name="user" >
+                    <option disabled selected value=""> Choose User </option>
+                    {% for user in au %}
+                        <option  value="{{ user }}">{{ user }}</option>
+                    {% endfor %}        
+                </select>  
+        </div>
+        <div class="d-grid gap-2 d-md-flex">
+            <button class="btn btn-primary mb-3" type="submit" name="show" value="detailsClicked" >Show details</button>
+        </div>
+    </form>
+
+    <div class="container-sm">        
+        <table class="table table-striped table-hover top">
+            <tr>    
+                <th> Start: </th>
+                <th> Stop:  </th>
+                <th> Duration: </th>
+                <th> Username: </th>
+            </tr>
+
+            {% for  started, stopped, duration, username, status in timing %}   
+
+            <tr>
+                <td>{{started}}</td>
+                <td>{{stopped}}</td>            
+                <td>{{duration}}</td>
+                <td>{{username}}</td>
+            </tr> 
+
+            {% endfor %}     
+        </table>    
+    </div>
+{% endif %}
+
+{% endblock %}
+
+{% block mainuser %}
+
+<h5 class="text-center" style="margin: 5%"> Welcome {{currentUser}}. </h5>
+
+{% if breakTaken %}
+    <div class="alert alert-success" style="text-align: center;" role="alert">
+        You have taken a break. Break length will be subtracted from measured amount of time.
+    </div>
+{% endif %}
+    <form action="/index" method="post">
+        <div class="form-group mb-3 text-center">    
+            <button class="btn btn-primary" type="submit" name="display" value="displayClicked">Display table</button>
+            <button class="btn btn-primary" type="submit" name="break15" value="break15Clicked">Break 15 min</button>
+            <button id="click"  class="btn btn-primary" type="submit" name="start" value="startClicked">Start</button>
+            <button class="btn btn-primary" type="submit" name="stop" value="stopClicked" >Stop</button>
+        </div>
+    </form>
+   
+    <div class="container-sm">        
+        <table class="table table-striped table-hover top">
+            <tr>    
+                <th> Start: </th>
+                <th> Stop:  </th>
+                <th> Duration: </th>
+                <th> Username: </th>
+            </tr>
+
+            {% for  started, stopped, username, duration in timing %}   
+
+            <tr>
+                <td>{{started}}</td>
+                <td>{{stopped}}</td>                
+                <td>{{duration}}</td>
+                <td>{{username}}</td>
+            </tr> 
+
+            {% endfor %}     
+        </table>    
+    </div>
+ 
+  
+{% endblock %}
+
+
+
+
+

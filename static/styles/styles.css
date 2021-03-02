@@ -1,0 +1,45 @@
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+.paragraph {
+    width: 99%;
+    border-width: 0px;
+}
+
+.buttonwrapper {
+    display: inline-block;
+    width: 100%;
+}
+
+.paragraph:hover {
+    background-color: rgb(220, 220, 220);
+}
+.svgarrow {
+    float: right;
+    margin-top: 3px;
+}
+
+.hide {
+    display: none;
+}
+
+.readmeheader {
+    margin-top: 3%;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+.top {
+    margin-top: 1%;
+}
+
+table {
+    margin-bottom: 10px;
+}
