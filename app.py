@@ -137,6 +137,7 @@ def index():
             # default break time: 30 min, for testing purposes: 5 seconds
             if break15 == "break15Clicked":
                 x = 5
+             
                 c.execute("UPDATE entrances SET break=? WHERE rowid=?", (x, current_no))
                 breakTaken = True   
 
