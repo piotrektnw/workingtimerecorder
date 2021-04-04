@@ -1,7 +1,7 @@
 # WEB APPLICATION REGISTERING EMPLOYEES WORKING TIME - **'WTR' - WORKING TIME RECORDER** 		
 #### 21.01.2021r. Krakow, Poland
 
-#### Video Demo: <URL HERE>
+
 #### Description:
 
 ###### What WTR is?
